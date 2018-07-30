@@ -23,7 +23,14 @@ password: algorithm123
 ## How to Use
 
 ### Command Line
-Open Terminal, or whatever you have python on and run `python shapeshifter.py` or `python3 shapeshifter.py` or whatever floats your boat
+Open Terminal, or whatever you have python on and clone this repository, and go into it:
+```
+git clone github.com/brian-cai/ShapeshifterHtml.git 
+cd ShapeshifterHtml
+```
+Then, run `python shapeshifter.py` or `python3 shapeshifter.py` or whatever floats your boat.
+
+You may run into issues with `from bs4 import BeautifulSoup`. This can be solved with getting pip and installing the appropriate modules with commands such as `pip3 install beautifulsoup4`. If you're using something like python IDLE, or using windows, there are other ways of installing bs4 such as `python -m pip install BeautifulSoup4` on cmd.
 
 ### Using your own levels
 While collecting html puzzles, it occurred to me that the puzzle actually dynamically changes (the levels are not necessarily identical each time you play). To replace the puzzle, just inspect the element and select 'edit as html', and save the contents as `something.html`
@@ -35,16 +42,26 @@ Example:
 
 Inside shapeshifter.py, you just change the html file listed in
 
+```gamemap, pieces, cycle, goalpiece = shapeshifter_html.get_shapeshifter_config('<name_of_file.html')```
+
+For instance, to use the level 4 file
+
 ```gamemap, pieces, cycle, goalpiece = shapeshifter_html.get_shapeshifter_config('htmllevels/level4.html')```
 
 If you are curious what the gameboard, pieces, cycle, or goal is, you can print it out before hand by inserting
 
-```shapeshifter_html.print_shapeshifter_html('htmllevels/level4.html')```
+```shapeshifter_html.print_shapeshifter_html('<name_of_file.html')```
+
+It's already written for you to uncomment out.
+
+You can also open the html file yourself in chrome or other browsers to see what the board looks like.
 
 ## Understanding the code
 
 ### HTML Parser
-We are fetching the board through html parsing via `shapeshifter_html.py` and feeding the returned variables into a `ShapeShifterSearchProblem` object
+We are fetching the board through html parsing via `shapeshifter_html.py` and feeding the returned variables into a `ShapeShifterSearchProblem` object.
+
+The object solves the problem using the A* search algorithm in `search.py` and keeps track of game states using a Counter from `util.py`.
 
 ### Search Heuristics
 
