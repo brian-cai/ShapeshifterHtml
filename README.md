@@ -42,15 +42,15 @@ Example:
 
 Inside shapeshifter.py, you just change the html file listed in
 
-```gamemap, pieces, cycle, goalpiece = shapeshifter_html.get_shapeshifter_config('<name_of_file.html')```
+```gamemap, pieces, cycle, goalpiece = shapeshifter_html.get_shapeshifter_config('<name_of_file.html>')```
 
-For instance, to use the level 4 file
+For instance, to use the level 4 file which is in the htmllevels folder:
 
 ```gamemap, pieces, cycle, goalpiece = shapeshifter_html.get_shapeshifter_config('htmllevels/level4.html')```
 
 If you are curious what the gameboard, pieces, cycle, or goal is, you can print it out before hand by inserting
 
-```shapeshifter_html.print_shapeshifter_html('<name_of_file.html')```
+```shapeshifter_html.print_shapeshifter_html('<name_of_file.html>')```
 
 It's already written for you to uncomment out.
 
