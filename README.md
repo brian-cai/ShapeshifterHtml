@@ -116,6 +116,15 @@ Nodes Expanded on Test Case: 47859
 
 Nodes Expanded on Test Case: 13691
 
+## What's Next
+Thinking of new and better heuristics 
+
+Implementing caching for heuristics
+
+Making comparisons smoother by not requiring iteration through the entire gamestate
+
+Implement a UI that allows an uploaded html + host it on the cloud
+
 ## Built With
 * [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/) - HTML Parser for Python
 * [CS188 Skeleton](http://ai.berkeley.edu/search.html) - Berkeley AI Pacman homework assignment skeleton
